@@ -8,7 +8,7 @@ export const HomeCard = () => {
             <img src={imagen} className="card-img-top" alt='imagen' />
             <div className="card-body">
                 <h5 className="card-title d-flex justify-content-start">Card title</h5>
-                <div className="text-start mb-2">
+                <div className="text-start mb-3">
                     <label>List:</label><span> item</span><br/>
                     <label>List:</label><span> item</span><br/>
                     <label>List:</label><span> item</span>
