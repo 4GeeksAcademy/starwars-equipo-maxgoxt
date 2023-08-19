@@ -16,8 +16,8 @@ export const HomeCard = () => {
                 <div className="d-flex justify-content-between">
                     <button type="button" className="btn btn-outline-primary">Learn more!</button>
                     {/*AGREGAR NUMERO EN EL ID DEL <input/> PARA QUE FUNCIONE BIEN*/}
-                    <input type="checkbox" className="btn-check" id="btn-check-outlined" autocomplete="off" />
-                    <label className="btn btn-outline-warning" for="btn-check-outlined"><i className="fa fa-heart" style={{ color: "#fec004" }}></i></label>
+                    <input type="checkbox" className="btn-check" id="btn-check-outlined" autoComplete="off" />
+                    <label className="btn btn-outline-warning" htmlFor="btn-check-outlined"><i className="fa fa-heart" style={{ color: "#fec004" }}></i></label>
                 </div>
             </div>
         </div>
