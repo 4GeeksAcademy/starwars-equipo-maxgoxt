@@ -29,9 +29,9 @@ export const HomeCard = props => {
                         <label className="btn btn-outline-warning" htmlFor="btn-check-outlined" onClick={() => actions.changeColor(props.index, '#000')}>
                             {// Conditional render example
 								// Check to see if the background is orange, if so, display the message
-								props.initial === "#fec004" ? (
-									<i className="fa fa-heart" style={{ color: props.initial }}></i>
-								) : <i className="fa fa-heart" style={{ color: props.background }}></i>}
+								props.background === "#fec004" ? (
+									<i class="far fa-heart" style={{ color: props.initial }}></i>
+								) : <i className="fas fa-heart" style={{ color: props.background }}></i>}
                         </label>
                     </div>
                 </div>
