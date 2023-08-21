@@ -12,7 +12,7 @@ export const HomeCard = props => {
             <div className="card mx-3" style={{ width: "18rem", flex: '0 0 250px' }}>
                 <img src={imagen} className="card-img-top" alt='imagen' />
                 <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
+                    <h5 className="card-title">{props.name}</h5>
                     <div className="mb-3">
                         <label>List:</label><span> item</span><br />
                         <label>List:</label><span> item</span><br />
@@ -37,8 +37,7 @@ export const HomeCard = props => {
 
 HomeCard.propTypes = {
     index: PropTypes.number,
-    initial: PropTypes.string,
-    background: PropTypes.string,
+    name: PropTypes.string
 };
 
 HomeCard.defaultProps = {
