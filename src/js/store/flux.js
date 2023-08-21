@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			people: [],
 			detallepeople: [],
-			detallePlaneta: [],
+			planetas: [],
+			detalledePlaneta: [],
 
 
 			demo: [
@@ -83,7 +84,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let response = await fetch("https://swapi.dev/api/planets");
 					let data = await response.json();
 
-					setStore({ detallePlaneta: data.result });
+					setStore({ planetas: data.result });
+
+
+
+				} catch (error) {
+					console.log(error);
+
+				}
+			},
+
+
+			/* detalles de planetas*/
+
+			obtenerInfoPlaneta: async function (num) {
+				try {
+					let response = await fetch("https://swapi.dev/api/planets/" + num);
+					let data = await response.json();
+
+					setStore({ detalledePlaneta: data.result });
 
 
 
