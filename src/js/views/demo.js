@@ -8,15 +8,15 @@ export const Demo = () => {
 
 	useEffect(() =>
 		actions.obtenerInfohome(),
-		actions.obtenerInfoPe(store.people.uid),
-		actions.obtenerlaneta()
-	actions.obtenerInfoPlaneta()
-	
+		/* 	actions.obtenerInfoPe(store.people.uid), */
+		actions.obtenerInfoPlaneta()
+		/*  actions.obtenerInfoPlaneta() */
+
 		, [])
 
 	console.log(store.people);
-	console.log(store.detallepeople);
-	console.log(store.detallePlaneta);
+	/* 	console.log(store.detallepeople);
+		console.log(store.detallePlaneta); */
 
 	return (
 		<div className="container">
