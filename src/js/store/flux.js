@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			people: [],
 			detallepeople: [],
+			detallePlaneta: [],
 		
 				
 			demo: [
@@ -73,6 +74,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 					
 				}
 			},
+
+
+			obtenerInfoPlaneta: async function(url) {
+				try {
+					let response = await fetch( url );
+					let data = await response.json();
+
+				 	setStore({ detallePlaneta: data.result });
+					
+					
+					
+				} catch (error) {
+					console.log(error);
+					
+				}
+			},
+
+			
+
+		
+
+
 
 			
 
