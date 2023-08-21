@@ -95,6 +95,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 
+
 			/* detalles de planetas*/
 
 			obtenerInfoPlaneta: async function (num) {
@@ -103,8 +104,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let data = await response.json();
 
 					setStore({ detalledePlaneta: data.result });
-
-
 
 				} catch (error) {
 					console.log(error);
