@@ -6,7 +6,7 @@ import imagen from "../../img/how-to.png";
 export const HomeCard = props => {
     const [fav, setFav] = useState("far fa-heart")
     const i = useRef(i)
-    console.log(fav);
+
     return (
         <div>
             <div className="card mx-3" style={{ width: "18rem", flex: '0 0 250px' }}>

@@ -6,6 +6,16 @@ import { Context } from "../store/appContext";
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
 
+	useEffect(() => 
+	actions.obtenerInfohome(),
+	actions.obtenerInfoPe(store.people.uid),
+	actions.obtenerInfoPlaneta()
+	,[])
+
+	console.log(store.people);
+	console.log(store.detallepeople);
+	console.log(store.detallePlaneta);
+
 	return (
 		<div className="container">
 			{store.demo.map((item, index) => {
