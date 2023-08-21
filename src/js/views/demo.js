@@ -14,18 +14,18 @@ export const Demo = () => {
 
 		, [])
 
-	console.log(store.people);
+	// console.log(store.people);
 	/* 	console.log(store.detallepeople);
 		console.log(store.detallePlaneta); */
 
 	return (
 		<div className="container">
-			{store.demo.map((item, index) => {
+			{store.people.map((item, index) => {
 				return (
 					<div key={index}>
-						<h2 className="text-danger">{item.title}</h2>
+						{/* <h2 className="text-danger">{item.name}</h2> */}
 						<div key={index} className="d-flex mb-5" style={{ overflowX: 'scroll', scrollSnapType: 'x mandatory' }}>
-							<HomeCard index={index} background={item.background} initial={item.initial}></HomeCard>
+							<HomeCard index={index} name={item.name}></HomeCard>
 						</div>
 					</div>
 				)
