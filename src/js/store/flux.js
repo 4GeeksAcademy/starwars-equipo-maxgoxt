@@ -8,12 +8,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				
 			demo: [
 				{
-					title: "FIRST",
+					title: "Personajes",
 					background: "white",
 					initial: "white"
 				},
 				{
-					title: "SECOND",
+					title: "Planetas",
 					background: "white",
 					initial: "white"
 				}
@@ -59,9 +59,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			obtenerInfoPe: async function() {
+			obtenerInfoPe: async function(url) {
 				try {
-					let response = await fetch( "https://www.swapi.tech/api/people/1" );
+					let response = await fetch( url );
 					let data = await response.json();
 
 				 	setStore({ detallepeople: data.result });
