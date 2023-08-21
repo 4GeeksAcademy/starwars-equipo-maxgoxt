@@ -8,8 +8,8 @@ export const Demo = () => {
 
 	useEffect(() => 
 	actions.obtenerInfohome(),
-	actions.obtenerInfoPe(store.people.uid),
-	actions.obtenerInfoPlaneta()
+	actions.obtenerInfoPe(1),
+	actions.obtenerInfoPlaneta(1)
 	,[])
 
 	console.log(store.people);
