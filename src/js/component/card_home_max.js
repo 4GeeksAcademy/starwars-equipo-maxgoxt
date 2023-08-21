@@ -1,14 +1,9 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../store/appContext";
-import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import imagen from "../../img/how-to.png";
 
 export const HomeCard = props => {
-
-    const { store, actions } = useContext(Context);
-
     const [fav, setFav] = useState("far fa-heart")
     const i = useRef(i)
     console.log(fav);
