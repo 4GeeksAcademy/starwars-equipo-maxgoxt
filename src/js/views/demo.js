@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { HomeCard } from "../component/card_home_max";
 import { Context } from "../store/appContext";
 
-import "../../styles/demo.css";
-
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
 

@@ -1,16 +1,22 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+
+			people: [],
+			detallepeople: [],
+			detallePlaneta: [],
+		
+				
 			demo: [
 				{
-					title: "Character",
-					background: "#fec004",
-					initial: "#fec004"
+					title: "Personajes",
+					background: "white",
+					initial: "white"
 				},
 				{
-					title: "Planets",
-					background: "#fec004",
-					initial: "fec004"
+					title: "Planetas",
+					background: "white",
+					initial: "white"
 				}
 			]
 		},
@@ -37,9 +43,68 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+
+			obtenerInfohome: async function() {
+				try {
+					let response = await fetch("https://www.swapi.tech/api/people");
+					let data = await response.json();
+
+				    setStore({ people: data.results });
+					
+				
+					
+				} catch (error) {
+					console.log(error);
+					
+				}
+			},
+
+			obtenerInfoPe: async function(url) {
+				try {
+					let response = await fetch( url );
+					let data = await response.json();
+
+				 	setStore({ detallepeople: data.result });
+					
+					
+					
+				} catch (error) {
+					console.log(error);
+					
+				}
+			},
+
+
+			obtenerInfoPlaneta: async function(url) {
+				try {
+					let response = await fetch( url );
+					let data = await response.json();
+
+				 	setStore({ detallePlaneta: data.result });
+					
+					
+					
+				} catch (error) {
+					console.log(error);
+					
+				}
+			},
+
+			
+
+		
+
+
+
+			
+
 		}
 	};
 };
 
+
+
+
 export default getState;
+
