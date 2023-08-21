@@ -61,6 +61,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+
+
 			/* detalles de personajes*/
 
 			obtenerInfoPe: async function (num) {
@@ -75,6 +77,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				}
 			},
+
+
 
 			/* planetas */
 			obtenerInfoPlaneta: async function () {
@@ -108,14 +112,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				}
 			},
-
-
-
-
-
-
-
-
 
 		}
 	};
