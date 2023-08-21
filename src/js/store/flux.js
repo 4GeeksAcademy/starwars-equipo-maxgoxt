@@ -10,7 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				{
 					title: "Planets",
 					background: "#fec004",
-					initial: "white"
+					initial: "fec004"
 				}
 			]
 		},

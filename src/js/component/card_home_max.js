@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { withRouter } from "react-router-dom";
@@ -9,6 +9,9 @@ export const HomeCard = props => {
 
     const { store, actions } = useContext(Context);
 
+    const [fav, setFav] = useState("far fa-heart")
+    const i = useRef(i)
+    console.log(fav);
     return (
         <div>
             <div className="card mx-3" style={{ width: "18rem", flex: '0 0 250px' }}>
@@ -26,12 +29,9 @@ export const HomeCard = props => {
                         </Link>
                         {/*AGREGAR NUMERO EN EL ID DEL <input/> PARA QUE FUNCIONE BIEN*/}
                         <input type="checkbox" className="btn-check" id="btn-check-outlined" autoComplete="off" />
-                        <label className="btn btn-outline-warning" htmlFor="btn-check-outlined" onClick={() => actions.changeColor(props.index, '#000')}>
-                            {// Conditional render example
-								// Check to see if the background is orange, if so, display the message
-								props.background === "#fec004" ? (
-									<i class="far fa-heart" style={{ color: props.initial }}></i>
-								) : <i className="fas fa-heart" style={{ color: props.background }}></i>}
+                        <label className="btn btn-outline-warning" htmlFor="btn-check-outlined" 
+                        onClick={() => { i.className !== 'far fa-heart' ? setFav("fas fa-heart") : setFav("far fa-heart")}}>
+                            <i className={fav} ref={i}></i>
                         </label>
                     </div>
                 </div>

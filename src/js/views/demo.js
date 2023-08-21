@@ -16,12 +16,13 @@ export const Demo = () => {
 					<div key={index}>
 						<h2 className="text-danger">{item.title}</h2>
 						<div key={index} className="d-flex mb-5" style={{ overflowX: 'scroll', scrollSnapType: 'x mandatory' }}>
-							<HomeCard index={index} background={item.background} initial={item.initial}></HomeCard>
-							<HomeCard></HomeCard>
-							<HomeCard></HomeCard>
-							<HomeCard></HomeCard>
-							<HomeCard></HomeCard>
-							<HomeCard></HomeCard>
+						<HomeCard index={index} background={item.background} initial={item.initial}></HomeCard>
+						<HomeCard></HomeCard>
+						<HomeCard index={index} background={item.background} initial={item.initial}></HomeCard>
+						<HomeCard index={index} background={item.background} initial={item.initial}></HomeCard>
+						<HomeCard index={index} background={item.background} initial={item.initial}></HomeCard>
+						<HomeCard index={index} background={item.background} initial={item.initial}></HomeCard>
+						<HomeCard index={index} background={item.background} initial={item.initial}></HomeCard>
 						</div>
 					</div>
 					/*<li
