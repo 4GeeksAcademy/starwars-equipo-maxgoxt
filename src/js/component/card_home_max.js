@@ -19,7 +19,7 @@ export const HomeCard = props => {
                         <label>List:</label><span> item</span>
                     </div>
                     <div className="d-flex justify-content-between">
-                        <Link to={"/single/" + props.index}>
+                        <Link to={"/singlepersonaje/" + (props.index+1)}>
                             <button type="button" className="btn btn-outline-primary">Learn more!</button>
                         </Link>
                         {/*AGREGAR NUMERO EN EL ID DEL <input/> PARA QUE FUNCIONE BIEN*/}

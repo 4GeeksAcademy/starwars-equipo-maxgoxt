@@ -66,11 +66,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			/* detalles de personajes*/
 
 			obtenerInfoPerSingle: async function (num) {
+				console.log(num)
 				try {
 					let response = await fetch("https://swapi.dev/api/people/" + num);
 					let data = await response.json();
 
-					setStore({ detallepeople: data.result });
+					setStore({ detallepeople: data });
 
 				} catch (error) {
 					console.log(error);

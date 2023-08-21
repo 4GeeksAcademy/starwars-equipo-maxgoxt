@@ -11,7 +11,6 @@ export const Single = props => {
 		<div className="jumbotron">
 
 			{/* <h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
-=======
 			
 			{/* const getPlanets = async () => {
   const response = await axios.get('https://swapi.tech/api/planets');
@@ -19,7 +18,7 @@ export const Single = props => {
 }; */}
 
 			<h1 className="display-4"></h1>
->>>>>>> 3958a9885655e68a58c5f24b7ae98176f8000613
+
 
 			<hr className="my-4" />
 
@@ -33,7 +32,7 @@ export const Single = props => {
 .catch(err => console.error(err)) */}
 
 				</span>
-			</Link> */}
+			</Link>
 
 			<Personajes> </Personajes>
 		</div>
