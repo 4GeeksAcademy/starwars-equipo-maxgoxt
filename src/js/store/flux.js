@@ -5,8 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			people: [],
 			detallepeople: [],
 			detallePlaneta: [],
-		
-				
+
+
 			demo: [
 				{
 					title: "Personajes",
@@ -45,59 +45,61 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 
-			obtenerInfohome: async function() {
-				try {
-					let response = await fetch("https://www.swapi.tech/api/people");
-					let data = await response.json();
 
-				    setStore({ people: data.results });
-					
-				
-					
+			/* personas */
+			obtenerInfohome: async function () {
+				try {
+					let response = await fetch("https://swapi.dev/api/people");
+					let data = await response.json();
+					setStore({ people: data.results });
+
+
 				} catch (error) {
 					console.log(error);
-					
+
 				}
 			},
 
-			obtenerInfoPe: async function(url) {
+			/* detalles de personajes*/
+
+			obtenerInfoPe: async function (num) {
 				try {
-					let response = await fetch( url );
+					let response = await fetch("https://swapi.dev/api/people/" + num);
 					let data = await response.json();
 
-				 	setStore({ detallepeople: data.result });
-					
-					
-					
+					setStore({ detallepeople: data.result });
+
+
+
 				} catch (error) {
 					console.log(error);
-					
+
+				}
+			},
+
+			/* planetas */
+			obtenerInfoPlaneta: async function () {
+				try {
+					let response = await fetch("https://swapi.dev/api/planets");
+					let data = await response.json();
+
+					setStore({ detallePlaneta: data.result });
+
+
+
+				} catch (error) {
+					console.log(error);
+
 				}
 			},
 
 
-			obtenerInfoPlaneta: async function(url) {
-				try {
-					let response = await fetch( url );
-					let data = await response.json();
-
-				 	setStore({ detallePlaneta: data.result });
-					
-					
-					
-				} catch (error) {
-					console.log(error);
-					
-				}
-			},
-
-			
-
-		
 
 
 
-			
+
+
+
 
 		}
 	};
