@@ -14,7 +14,7 @@ export const Single = props => {
   return response.data.results;
 }; */}
 
-			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
+			<h1 className="display-4"></h1>
 
 			<hr className="my-4" />
 
