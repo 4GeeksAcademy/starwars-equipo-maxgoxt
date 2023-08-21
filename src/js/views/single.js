@@ -36,7 +36,7 @@ export const Single = props => {
 Single.propTypes = {
 	match: PropTypes.object
 };
-// volver  (
+// 
 	// <Columna> _ _
 	// 	<Tarjeta> _ _
 	// 		< Tarjeta . Img  variant = "top"  src = " https://raw.githubusercontent.com/NicolasArayaB/starwars-blog-reading-list/master/dist/ img/ darthVader .jpg"  width = "200"  / >
