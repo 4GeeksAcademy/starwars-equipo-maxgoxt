@@ -8,7 +8,6 @@ export const Personajes = props => {
   const params = useParams();
 
   return (
- 
        <div className="jumbotron d-flex align-items-center">
        <div className="jumbotron-content">    
        <div className="container">
