@@ -65,7 +65,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			/* detalles de personajes*/
 
-			obtenerInfoPe: async function (num) {
+			obtenerInfoPerSingle: async function (num) {
 				try {
 					let response = await fetch("https://swapi.dev/api/people/" + num);
 					let data = await response.json();
@@ -81,7 +81,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 			/* planetas */
-			obtenerInfoPlaneta: async function () {
+			obtenerPlanetaSingle: async function () {
 				try {
 					let response = await fetch("https://swapi.dev/api/planets");
 					let data = await response.json();
