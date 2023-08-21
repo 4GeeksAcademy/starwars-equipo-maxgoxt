@@ -70,8 +70,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					setStore({ detallepeople: data.result });
 
-
-
 				} catch (error) {
 					console.log(error);
 
