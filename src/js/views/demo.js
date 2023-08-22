@@ -27,7 +27,7 @@ export const Demo = () => {
 				return (
 					<div key={index}>
 						<div key={index}>
-							<HomeCardPers index={index} name={item.name}></HomeCardPers>
+							<HomeCardPers index={index} name={item.name} gender={item.gender} hairColor={item.hair_color} eyeColor={item.eye_color}></HomeCardPers>
 						</div>
 					</div>
 				)
@@ -38,10 +38,8 @@ export const Demo = () => {
 			<div className="d-flex mb-5" style={{ overflowX: 'scroll', scrollSnapType: 'x mandatory' }}>
 			{store.planetas.map((item, index) => {
 				return (
-					<div key={index}>
 						<div key={index}>
 							<HomeCardPlanet index={index} name={item.name} population={item.population} terrain={item.terrain}></HomeCardPlanet>
-						</div>
 					</div>
 				)
 			})}

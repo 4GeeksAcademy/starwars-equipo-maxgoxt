@@ -19,15 +19,15 @@ export const HomeCardPlanet = props => {
             <div className="card mx-3" style={{ width: "18rem", flex: '0 0 250px' }}>
                 {props.index === 0 ?
                 <img src='https://static.wikia.nocookie.net/esstarwars/images/b/b0/Tatooine_TPM.png' className="card-img-top" alt='imagen' />:
-            <img src={"https://starwars-visualguide.com/assets/img/planets/" + (props.index) + ".jpg"} className="card-img-top" alt='imagen' /> }
+            <img src={"https://starwars-visualguide.com/assets/img/planets/" + (props.index + 1) + ".jpg"} className="card-img-top" alt='imagen' /> }
             <div className="card-body">
                     <h5 className="card-title">{props.name}</h5>
                     <div className="mb-3">
-                        <label>Population: </label><span>{props.population}</span><br />
-                        <label>Terrain: </label><span>{props.terrain}</span><br />
+                        <label>Population:</label><span> {props.population}</span><br />
+                        <label>Terrain:</label><span> {props.terrain}</span><br />
                     </div>
                     <div className="d-flex justify-content-between">
-                        <Link to={"/singlePlaneta/" + (props.index)}>
+                        <Link to={"/singlePlaneta/" + (props.index + 1)}>
                             <button type="button" className="btn btn-outline-primary">Learn more!</button>
                         </Link>
                         {/*AGREGAR NUMERO EN EL ID DEL <input/> PARA QUE FUNCIONE BIEN*/}
