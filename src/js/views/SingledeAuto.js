@@ -3,18 +3,18 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { Personajes } from "../component/personajes.js"
+import { auto } from "../component/auto.js"
 
-export const SinglePlaneta = props => {
+export const SingleAuto = props => {
     const { store, actions } = useContext(Context);
     const params = useParams();
 
-    console.log(store.detalledePlaneta);
+    console.log(store.detallesAuto);
     console.log("hola");
 
 
     useEffect(() => {
-        actions.obtenerPlanetaSingle(params.theid)
+        actions.obtenerAutoSingle(params.theid)
     }, [])
     return (
         <div className="jumbotron">
@@ -26,7 +26,7 @@ export const SinglePlaneta = props => {
                                 <img src="https://media.gq.com.mx/photos/5dfbaf25d811050008602c46/16:9/w_1280,c_limit/star%20wars.jpg" />
                             </div>
                             <div className="col-md-6">
-                                <h1>{store.detalledePlaneta.name} </h1>
+                                <h1>{store.detallesAuto.name} </h1>
                                 <p>ihdskadiasndlkasmdñlasda</p>
                             </div>
                         </div>
@@ -39,7 +39,7 @@ export const SinglePlaneta = props => {
                                     <div className="card-body">
                                         <h5 className="card-title">Name</h5>
                                         <p className="card-text">
-                                            {store.detalledePlaneta.name}
+                                            {store.detallesAuto.name}
                                         </p>
                                     </div>
                                 </div>
@@ -47,9 +47,9 @@ export const SinglePlaneta = props => {
                             <div className="col-md-2">
                                 <div className="card">
                                     <div className="card-body">
-                                        <h5 className="card-title">Climate</h5>
+                                        <h5 className="card-title">model</h5>
                                         <p className="card-text">
-                                            {store.detalledePlaneta.climate}
+                                            {store.detallesAuto.model}
                                         </p>
                                     </div>
                                 </div>
@@ -57,9 +57,9 @@ export const SinglePlaneta = props => {
                             <div className="col-md-2">
                                 <div className="card">
                                     <div className="card-body">
-                                        <h5 className="card-title">Population</h5>
+                                        <h5 className="card-title">max_atmosphering_speed</h5>
                                         <p className="card-text">
-                                            {store.detalledePlaneta.population}
+                                            {store.detallesAuto.max_atmosphering_speed}
                                         </p>
                                     </div>
                                 </div>
@@ -67,9 +67,9 @@ export const SinglePlaneta = props => {
                             <div className="col-md-2">
                                 <div className="card">
                                     <div className="card-body">
-                                        <h5 className="card-title">Orbital_period</h5>
+                                        <h5 className="card-title">passengers</h5>
                                         <p className="card-text">
-                                            {store.detalledePlaneta.orbital_period}
+                                            {store.detallesAuto.passengers}
                                         </p>
                                     </div>
                                 </div>
@@ -77,9 +77,9 @@ export const SinglePlaneta = props => {
                             <div className="col-md-2">
                                 <div className="card">
                                     <div className="card-body">
-                                        <h5 className="card-title">Rotation_period</h5>
+                                        <h5 className="card-title">cargo_capacity</h5>
                                         <p className="card-text">
-                                            {store.detalledePlaneta.rotation_period}
+                                            {store.detallesAuto.cargo_capacity}
                                         </p>
                                     </div>
                                 </div>
@@ -87,9 +87,9 @@ export const SinglePlaneta = props => {
                             <div className="col-md-2">
                                 <div className="card">
                                     <div className="card-body">
-                                        <h5 className="card-title">Diameter</h5>
+                                        <h5 className="card-title">vehicle_class</h5>
                                         <p className="card-text">
-                                            {store.detalledePlaneta.diameter}
+                                            {store.detallesAuto.vehicle_class}
                                         </p>
                                     </div>
                                 </div>
@@ -103,8 +103,6 @@ export const SinglePlaneta = props => {
             <Link to="/">
                 <span className="btn btn-primary btn-lg" href="#" role="button">
                     Back home
-
-
                 </span>
             </Link>
 
