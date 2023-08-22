@@ -3,9 +3,8 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { auto } from "../component/auto.js"
 
-export const SingleAuto = props => {
+export const SingleAuto = () => {
     const { store, actions } = useContext(Context);
     const params = useParams();
 
@@ -14,7 +13,7 @@ export const SingleAuto = props => {
 
 
     useEffect(() => {
-        actions.obtenerAutoSingle(params.theid)
+        actions.obtenerAutoSingle(params.theid + 1)
     }, [])
     return (
         <div className="jumbotron">
