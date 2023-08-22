@@ -15,11 +15,12 @@ export const Personajes = props => {
   }, [])
 
   return (
-    <div className="jumbotron d-flex align-items-center">
-      <div className="jumbotron-content">
+    <div className="jumbotron container">
+      <div className="jumbotron d-flex align-items-center">
+      <div className="jumbotron-content"> 
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6" style={{marginBottom:"20px"}}>
               <img src={"https://starwars-visualguide.com/assets/img/characters/" +(params.theid+1) + ".jpg" } />
             </div>
             <div className="col-md-6">
@@ -29,7 +30,7 @@ export const Personajes = props => {
           </div>
         </div>
 
-        <div className="container-flex m-2">
+        <div className="container-flex">
           <div className="row">
             <div className="col">
               <div className="card">
@@ -93,8 +94,14 @@ export const Personajes = props => {
             </div>
           </div>
         </div>
+        </div>
       </div>
 
+      <Link to="/">
+				<span className="btn btn-primary btn-lg m-2" href="#" role="button">
+					Back home
+				</span>
+			</Link>
     </div>
 
   );

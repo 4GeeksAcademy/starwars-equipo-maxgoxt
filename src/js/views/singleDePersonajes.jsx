@@ -13,11 +13,7 @@ export const SinglePersonajes = props => {
 <br/>
 <Personajes/>
 
-			<Link to="/">
-				<span className="btn btn-primary btn-lg m-2" href="#" role="button">
-					Back home
-				</span>
-			</Link>
+			
 
 		</div>
 	);
