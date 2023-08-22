@@ -19,7 +19,7 @@ export const HomeCardPlanet = props => {
             <div className="card mx-3" style={{ width: "18rem", flex: '0 0 250px' }}>
                 {props.index === 0 ?
                 <img src='https://static.wikia.nocookie.net/esstarwars/images/b/b0/Tatooine_TPM.png' className="card-img-top" alt='imagen' />:
-            <img src={"https://starwars-visualguide.com/assets/img/planets/" + (props.index + 1) + ".jpg"} className="card-img-top" alt='imagen' /> }
+            <img src={"https://starwars-visualguide.com/assets/img/planets/" + (props.index) + ".jpg"} className="card-img-top" alt='imagen' /> }
             <div className="card-body">
                     <h5 className="card-title">{props.name}</h5>
                     <div className="mb-3">
