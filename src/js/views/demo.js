@@ -21,30 +21,30 @@ export const Demo = () => {
 
 	return (
 		<div className="container">
-				<h2 className="text-danger">Characters</h2>
+			<h2 className="text-danger">Characters</h2>
 			<div className="d-flex mb-5" style={{ overflowX: 'scroll', scrollSnapType: 'x mandatory' }}>
-			{store.people.map((item, index) => {
-				return (
-					<div key={index}>
+				{store.people.map((item, index) => {
+					return (
 						<div key={index}>
-							<HomeCardPers index={index} name={item.name}></HomeCardPers>
+							<div key={index}>
+								<HomeCardPers index={index} name={item.name}></HomeCardPers>
+							</div>
 						</div>
-					</div>
-				)
-			})}
+					)
+				})}
 			</div>
 			<br />
 			<h2 className="text-danger">Planets</h2>
 			<div className="d-flex mb-5" style={{ overflowX: 'scroll', scrollSnapType: 'x mandatory' }}>
-			{store.planetas.map((item, index) => {
-				return (
-					<div key={index}>
+				{store.planetas.map((item, index) => {
+					return (
 						<div key={index}>
-							<HomeCardPlanet index={index} name={item.name} population={item.population} terrain={item.terrain}></HomeCardPlanet>
+							<div key={index}>
+								<HomeCardPlanet index={index} name={item.name} population={item.population} terrain={item.terrain}></HomeCardPlanet>
+							</div>
 						</div>
-					</div>
-				)
-			})}
+					)
+				})}
 			</div>
 			<br />
 			<Link to="/">

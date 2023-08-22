@@ -8,6 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			detalledePlaneta: {},
 			autos: [],
 			detallesAuto: {},
+			favorito: [],
 
 		},
 		actions: {
@@ -133,6 +134,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+			cargarFavorito: (nom) => {
+
+				setStore(favorito.concat([nom]))
+
+			},
 
 		}
 	};
