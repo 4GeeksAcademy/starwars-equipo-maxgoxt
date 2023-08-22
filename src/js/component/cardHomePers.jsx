@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 import imagen from "../../img/how-to.png";
 
@@ -12,7 +13,7 @@ export const HomeCardPers = props => {
     return (
         <div>
             <div className="card mx-3" style={{ width: "18rem", flex: '0 0 250px' }}>
-                <img src={imagen} className="card-img-top" alt='imagen' />
+                <img src={"https://starwars-visualguide.com/assets/img/characters/" + (props.index + 1) + ".jpg"} className="card-img-top" alt='imagen' />
                 <div className="card-body">
                     <h5 className="card-title">{props.name}</h5>
                     <div className="mb-3">

@@ -40,7 +40,7 @@ export const Demo = () => {
 				return (
 					<div key={index}>
 						<div key={index}>
-							<HomeCardPlanet index={index} name={item.name}></HomeCardPlanet>
+							<HomeCardPlanet index={index} name={item.name} population={item.population} terrain={item.terrain}></HomeCardPlanet>
 						</div>
 					</div>
 				)

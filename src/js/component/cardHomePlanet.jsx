@@ -6,20 +6,25 @@ import imagen from "../../img/how-to.png";
 
 export const HomeCardPlanet = props => {
     const [fav, setFav] = useState("far fa-heart")
-    const i = useRef(i)
-
-    const { store } = useContext(Context);
+    const i = useRef(i)    
+    const { store, actions } = useContext(Context);
+    
+    useEffect(() => {
+        actions.obtenerPlanetaSingle(props.index)
+        console.log(store.detalledePlaneta);
+    }, [])
 
     return (
         <div>
             <div className="card mx-3" style={{ width: "18rem", flex: '0 0 250px' }}>
-                <img src={imagen} className="card-img-top" alt='imagen' />
-                <div className="card-body">
+                {props.index === 0 ?
+                <img src='https://static.wikia.nocookie.net/esstarwars/images/b/b0/Tatooine_TPM.png' className="card-img-top" alt='imagen' />:
+            <img src={"https://starwars-visualguide.com/assets/img/planets/" + (props.index + 1) + ".jpg"} className="card-img-top" alt='imagen' /> }
+            <div className="card-body">
                     <h5 className="card-title">{props.name}</h5>
                     <div className="mb-3">
-                        <label>Population:</label><span>{store.detalledeplaneta.population}</span><br />
-                        <label>Terrain:</label><span>{store.detalledeplaneta.population}</span><br />
-                        <label>List:</label><span> item</span>
+                        <label>Population: </label><span>{props.population}</span><br />
+                        <label>Terrain: </label><span>{props.terrain}</span><br />
                     </div>
                     <div className="d-flex justify-content-between">
                         <Link to={"/singlePlaneta/" + (props.index)}>
@@ -40,7 +45,9 @@ export const HomeCardPlanet = props => {
 
 HomeCardPlanet.propTypes = {
     index: PropTypes.number,
-    name: PropTypes.string
+    name: PropTypes.string,
+    terrain: PropTypes.string,
+    population: PropTypes.string,
 };
 
 HomeCardPlanet.defaultProps = {
