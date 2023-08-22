@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Personajes }  from "../component/personajes.js"
+import "../../styles/people.css"
 
 export const SinglePersonajes = props => {
 	const { store, actions } = useContext(Context);
