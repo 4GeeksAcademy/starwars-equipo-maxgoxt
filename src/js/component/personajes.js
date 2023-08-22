@@ -24,7 +24,7 @@ export const Personajes = props => {
             </div>
             <div className="col-md-6">
               <h1>{store.detallepeople.name} </h1>
-              <p>ihdskadiasndlkasmdñlasda</p>
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
             </div>
           </div>
         </div>
@@ -64,10 +64,9 @@ export const Personajes = props => {
             <div className="col-md-2">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
+                  <h5 className="card-title">Heigth</h5>
                   <p className="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
+                  {store.detallepeople.heigth}
                   </p>
                 </div>
               </div>
@@ -75,10 +74,9 @@ export const Personajes = props => {
             <div className="col-md-2">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
+                  <h5 className="card-title">Skin Color</h5>
                   <p className="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
+                  {store.detallepeople.skin_color}
                   </p>
                 </div>
               </div>
@@ -86,10 +84,9 @@ export const Personajes = props => {
             <div className="col-md-2">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
+                  <h5 className="card-title">Eye Color</h5>
                   <p className="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
+                  {store.detallepeople.eye_color}
                   </p>
                 </div>
               </div>
