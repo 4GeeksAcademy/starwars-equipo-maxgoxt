@@ -9,19 +9,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			autos: [],
 			detallesAuto: {},
 
-
-			demo: [
-				{
-					title: "Personajes",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "Planetas",
-					background: "white",
-					initial: "white"
-				}
-			]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
