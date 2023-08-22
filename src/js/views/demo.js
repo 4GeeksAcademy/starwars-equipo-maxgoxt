@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { HomeCard } from "../component/card_home_max";
+import { HomeCardPers } from "../component/cardHomePers.jsx";
+import { HomeCardPlanet } from "../component/cardHomePlanet.jsx";
 import { Context } from "../store/appContext";
 
 export const Demo = () => {
@@ -20,16 +21,31 @@ export const Demo = () => {
 
 	return (
 		<div className="container">
+				<h2 className="text-danger">Characters</h2>
+			<div className="d-flex mb-5" style={{ overflowX: 'scroll', scrollSnapType: 'x mandatory' }}>
 			{store.people.map((item, index) => {
 				return (
 					<div key={index}>
-						{/* <h2 className="text-danger">{item.name}</h2> */}
-						<div key={index} className="d-flex mb-5" style={{ overflowX: 'scroll', scrollSnapType: 'x mandatory' }}>
-							<HomeCard index={index} name={item.name}></HomeCard>
+						<div key={index}>
+							<HomeCardPers index={index} name={item.name}></HomeCardPers>
 						</div>
 					</div>
 				)
 			})}
+			</div>
+			<br />
+			<h2 className="text-danger">Planets</h2>
+			<div className="d-flex mb-5" style={{ overflowX: 'scroll', scrollSnapType: 'x mandatory' }}>
+			{store.planetas.map((item, index) => {
+				return (
+					<div key={index}>
+						<div key={index}>
+							<HomeCardPlanet index={index} name={item.name}></HomeCardPlanet>
+						</div>
+					</div>
+				)
+			})}
+			</div>
 			<br />
 			<Link to="/">
 				<button className="btn btn-primary">Back home</button>

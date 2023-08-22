@@ -6,20 +6,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			detallepeople: {},
 			planetas: [],
 			detalledePlaneta: {},
-
-
-			demo: [
-				{
-					title: "Personajes",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "Planetas",
-					background: "white",
-					initial: "white"
-				}
-			]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction

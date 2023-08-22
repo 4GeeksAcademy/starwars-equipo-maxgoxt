@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 import imagen from "../../img/how-to.png";
 
-export const HomeCard = props => {
+export const HomeCardPlanet = props => {
     const [fav, setFav] = useState("far fa-heart")
     const i = useRef(i)
+
+    const { store } = useContext(Context);
 
     return (
         <div>
@@ -14,12 +17,12 @@ export const HomeCard = props => {
                 <div className="card-body">
                     <h5 className="card-title">{props.name}</h5>
                     <div className="mb-3">
-                        <label>List:</label><span> item</span><br />
-                        <label>List:</label><span> item</span><br />
+                        <label>Population:</label><span>{store.detalledeplaneta.population}</span><br />
+                        <label>Terrain:</label><span>{store.detalledeplaneta.population}</span><br />
                         <label>List:</label><span> item</span>
                     </div>
                     <div className="d-flex justify-content-between">
-                        <Link to={"/singlepersonaje/" + (props.index+1)}>
+                        <Link to={"/singlePlaneta/" + (props.index)}>
                             <button type="button" className="btn btn-outline-primary">Learn more!</button>
                         </Link>
                         {/*AGREGAR NUMERO EN EL ID DEL <input/> PARA QUE FUNCIONE BIEN*/}
@@ -35,11 +38,11 @@ export const HomeCard = props => {
     )
 };
 
-HomeCard.propTypes = {
+HomeCardPlanet.propTypes = {
     index: PropTypes.number,
     name: PropTypes.string
 };
 
-HomeCard.defaultProps = {
+HomeCardPlanet.defaultProps = {
     changeColor: null,
 }
