@@ -6,6 +6,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			detallepeople: {},
 			planetas: [],
 			detalledePlaneta: {},
+			autos: [],
+			detallesAuto: {},
 
 
 			demo: [
@@ -113,6 +115,36 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				}
 			},
+
+			obtenerAutos: async function () {
+				try {
+					let response = await fetch("https://swapi.dev/api/vehicles");
+					let data = await response.json();
+
+					setStore({ autos: data.results });
+
+
+
+				} catch (error) {
+					console.log(error);
+
+				}
+			},
+
+
+			obtenerAutoSingle: async function (num) {
+				try {
+					let response = await fetch("https://swapi.dev/api/vehicles/" + num);
+					let data = await response.json();
+
+					setStore({ detallesAuto: data });
+
+				} catch (error) {
+					console.log(error);
+
+				}
+			},
+
 
 		}
 	};
