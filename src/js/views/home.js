@@ -6,7 +6,6 @@ import { Demo } from "./demo"
 
 export const Home = () => (
 	<div>
-		
 		<Demo />
 	</div>
 );
