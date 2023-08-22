@@ -17,9 +17,9 @@ export const HomeCardPers = props => {
                 <div className="card-body">
                     <h5 className="card-title">{props.name}</h5>
                     <div className="mb-3">
-                        <label>List:</label><span> item</span><br />
-                        <label>List:</label><span> item</span><br />
-                        <label>List:</label><span> item</span>
+                        <label>Genre: </label><span> {props.gender}</span><br />
+                        <label>Hair Color:</label><span> {props.hairColor}</span><br />
+                        <label>Eye-Color:</label><span> {props.eyeColor}</span>
                     </div>
                     <div className="d-flex justify-content-between">
                         <Link to={"/singlepersonaje/" + (props.index+1)}>
@@ -40,7 +40,10 @@ export const HomeCardPers = props => {
 
 HomeCardPers.propTypes = {
     index: PropTypes.number,
-    name: PropTypes.string
+    name: PropTypes.string,
+    gender: PropTypes.string,
+    eyeColor: PropTypes.string,
+    hairColor: PropTypes.string
 };
 
 HomeCardPers.defaultProps = {

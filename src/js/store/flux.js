@@ -107,7 +107,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			//Autos
 			obtenerAutos: async function () {
 				try {
-					let response = await fetch("https://swapi.dev/api/vehicles");
+					let response = await fetch("https://swapi.dev/api/vehicles/");
 					let data = await response.json();
 
 					setStore({ autos: data.results });
@@ -138,6 +138,82 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				setStore(favorito.concat([nom]))
 
+			},
+
+			CRUS: async () => {
+				try {
+					const respu = await
+						fetch('https://playground.4geeks.com/apis/fake/todos/user/Jorge', {
+							method: "POST",
+							body: JSON.stringify([]),
+							headers: {
+								"Content-Type": "application/json"
+							}
+
+						})
+
+					const data = await respu.json()
+					console.log(data);
+
+
+				} catch (error) {
+
+					console.log(error);
+				}
+
+
+			},
+
+
+			//Obtener Info
+
+			obtenerInfo: async () => {
+
+				try {
+					const res = await
+						fetch('https://playground.4geeks.com/apis/fake/todos/user/Jorge', {
+							method: "GET",
+							headers: {
+								"Content-Type": "application/json"
+
+							}
+
+						})
+
+					const data = await res.json()
+					setList(data)
+
+				} catch (error) {
+
+					console.log(error);
+				}
+			},
+
+
+
+			//Actualizar
+
+			actualizar: async () => {
+
+				try {
+					const resa = await
+						fetch('https://playground.4geeks.com/apis/fake/todos/user/Jorge', {
+							method: "PUT",
+							body: JSON.stringify(getStore(favorito)),
+							headers: {
+								"Content-Type": "application/json"
+							},
+
+
+						})
+
+					const data = await resa.json()
+					console.log(data);
+
+				} catch (error) {
+
+					console.log(error);
+				}
 			},
 
 		}

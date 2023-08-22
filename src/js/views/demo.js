@@ -2,22 +2,27 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { HomeCardPers } from "../component/cardHomePers.jsx";
 import { HomeCardPlanet } from "../component/cardHomePlanet.jsx";
+import { HomeCardCar } from "../component/cardHomeCar.jsx";
 import { Context } from "../store/appContext";
+
 
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
 
-	useEffect(() =>
+
+
+	useEffect(() => {
 		actions.obtenerInfohome(),
-		/* 	actions.obtenerInfoPe(store.people.uid), */
-		actions.obtenerInfoPlaneta()
-		/*  actions.obtenerInfoPlaneta() */
+			actions.obtenerInfoPlaneta(),
+			actions.obtenerAutos()
 
-		, [])
+	}, [])
 
-	// console.log(store.people);
-	/* 	console.log(store.detallepeople);
-		console.log(store.detallePlaneta); */
+
+
+	useEffect(function () {
+		actions.actualizar()
+	}, [store.favorito])
 
 	return (
 		<div className="container">
@@ -26,9 +31,7 @@ export const Demo = () => {
 				{store.people.map((item, index) => {
 					return (
 						<div key={index}>
-							<div key={index}>
-								<HomeCardPers index={index} name={item.name}></HomeCardPers>
-							</div>
+							<HomeCardPers index={index} name={item.name} gender={item.gender} hairColor={item.hair_color} eyeColor={item.eye_color}></HomeCardPers>
 						</div>
 					)
 				})}
@@ -39,17 +42,23 @@ export const Demo = () => {
 				{store.planetas.map((item, index) => {
 					return (
 						<div key={index}>
-							<div key={index}>
-								<HomeCardPlanet index={index} name={item.name} population={item.population} terrain={item.terrain}></HomeCardPlanet>
-							</div>
+							<HomeCardPlanet index={index} name={item.name} population={item.population} terrain={item.terrain}></HomeCardPlanet>
 						</div>
 					)
 				})}
 			</div>
 			<br />
-			<Link to="/">
-				<button className="btn btn-primary">Back home</button>
-			</Link>
+			<h2 className="text-danger">Vehicles</h2>
+			<div className="d-flex mb-5" style={{ overflowX: 'scroll', scrollSnapType: 'x mandatory' }}>
+				{store.autos.map((item, index) => {
+					return (
+						<div key={index}>
+							<HomeCardCar index={index} name={item.name} manufacturer={item.manufacturer} model={item.model}></HomeCardCar>
+						</div>
+					)
+				})}
+			</div>
 		</div>
 	);
 };
+
