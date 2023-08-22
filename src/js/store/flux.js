@@ -103,6 +103,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+			//Autos
 			obtenerAutos: async function () {
 				try {
 					let response = await fetch("https://swapi.dev/api/vehicles");
@@ -118,7 +119,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-
+			//Detalles de autos
 			obtenerAutoSingle: async function (num) {
 				try {
 					let response = await fetch("https://swapi.dev/api/vehicles/" + num);
