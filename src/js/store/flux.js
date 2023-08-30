@@ -15,6 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
+
 			},
 			loadSomeData: () => {
 				/**
@@ -34,6 +35,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+
 			},
 
 
@@ -128,6 +130,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					setStore({ detallesAuto: data });
 
+
 				} catch (error) {
 					console.log(error);
 
@@ -135,86 +138,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			cargarFavorito: (nom) => {
+				console.log("Favorito" + nom);
+				const store = getStore();
+				setStore({ ...store, favorito: [...store.favorito, nom] })
 
-				setStore(favorito.concat([nom]))
+				for (let index = 0; index < store.favorito.length; index++) {
+					const element = store.favorito;
+					const repe = store.favorito[i]
+					if (repe = element[i]) {
+						
+					}
+					console.log("cargar favorito = " + element)
 
-			},
-
-			CRUS: async () => {
-				try {
-					const respu = await
-						fetch('https://playground.4geeks.com/apis/fake/todos/user/Jorge', {
-							method: "POST",
-							body: JSON.stringify([]),
-							headers: {
-								"Content-Type": "application/json"
-							}
-
-						})
-
-					const data = await respu.json()
-					console.log(data);
-
-
-				} catch (error) {
-
-					console.log(error);
 				}
 
 
+
 			},
 
 
-			//Obtener Info
-
-			obtenerInfo: async () => {
-
-				try {
-					const res = await
-						fetch('https://playground.4geeks.com/apis/fake/todos/user/Jorge', {
-							method: "GET",
-							headers: {
-								"Content-Type": "application/json"
-
-							}
-
-						})
-
-					const data = await res.json()
-					setList(data)
-
-				} catch (error) {
-
-					console.log(error);
-				}
-			},
-
-
-
-			//Actualizar
-
-			actualizar: async () => {
-
-				try {
-					const resa = await
-						fetch('https://playground.4geeks.com/apis/fake/todos/user/Jorge', {
-							method: "PUT",
-							body: JSON.stringify(getStore(favorito)),
-							headers: {
-								"Content-Type": "application/json"
-							},
-
-
-						})
-
-					const data = await resa.json()
-					console.log(data);
-
-				} catch (error) {
-
-					console.log(error);
-				}
-			},
+			BorrarFavoritos: (id) => {
+				const store = getStore();
+				setStore(store.favorito.filter((x, newIndex) =>
+					id != newIndex
+				))
+			}
 
 		}
 	};

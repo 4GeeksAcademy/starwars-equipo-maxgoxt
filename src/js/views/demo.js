@@ -10,7 +10,6 @@ export const Demo = () => {
 	const { store, actions } = useContext(Context);
 
 
-
 	useEffect(() => {
 		actions.obtenerInfohome(),
 			actions.obtenerInfoPlaneta(),
@@ -19,9 +18,8 @@ export const Demo = () => {
 	}, [])
 
 
-
 	useEffect(function () {
-		actions.actualizar()
+		/* 	actions.actualizar() */
 	}, [store.favorito])
 
 	return (
