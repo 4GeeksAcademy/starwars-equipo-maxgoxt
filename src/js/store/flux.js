@@ -138,30 +138,47 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			cargarFavorito: (nom) => {
-				console.log("Favorito" + nom);
 				const store = getStore();
-				setStore({ ...store, favorito: [...store.favorito, nom] })
 
-				for (let index = 0; index < store.favorito.length; index++) {
-					const element = store.favorito;
-					const repe = store.favorito[i]
-					if (repe = element[i]) {
-						
+				let nombrEx = false
+
+
+				store.favorito.map((item, index) => {
+
+					if (nom === item) {
+						return nombrEx = true
+
 					}
-					console.log("cargar favorito = " + element)
 
+				})
+
+				if (nombrEx === false) {
+					console.log(nombrEx)
+					setStore({ ...store, favorito: [...store.favorito, nom] })
 				}
-
-
 
 			},
 
 
 			BorrarFavoritos: (id) => {
+
 				const store = getStore();
-				setStore(store.favorito.filter((x, newIndex) =>
-					id != newIndex
-				))
+				const result = store.favorito.filter((x, newIndex) => {
+
+					return id != newIndex
+				})
+
+				setStore({
+					...store, favorito: store.favorito.filter((x, newIndex) => {
+
+						return id != newIndex
+					})
+
+
+
+				})
+
+
 			}
 
 		}

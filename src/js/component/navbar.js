@@ -5,10 +5,10 @@ import { Context } from "../store/appContext";
 export const Navbar = () => {
 
 	const { store, actions } = useContext(Context);
-
-	let motora = [store.favorito]
-	console.log("motoloco: " + motora);
-
+	/* 
+		let motora = [store.favorito]
+		console.log("motoloco: " + motora);
+	 */
 
 	return (
 		<div className="container bg-light">
