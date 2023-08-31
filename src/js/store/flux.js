@@ -129,36 +129,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let data = await response.json();
 
 					if (response.status === 404) {
-						alert("la informacion detallada de este vehiculo no esta disponible")	
-					}				
+						alert("la informacion detallada de este vehiculo no esta disponible")
+					}
 					setStore({ detallesAuto: data });
 
 				} catch (error) {
 					console.log(error);
 
 				}
-			},
-
-			cargarFavorito: (nom) => {
-				const store = getStore();
-
-				let nombrEx = false
-
-
-				store.favorito.map((item, index) => {
-
-					if (nom === item) {
-						return nombrEx = true
-
-					}
-
-				})
-
-				if (nombrEx === false) {
-					console.log(nombrEx)
-					setStore({ ...store, favorito: [...store.favorito, nom] })
-				}
-
 			},
 
 
@@ -180,6 +158,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				})
 
+
+			},
+
+			cargarFavorito: (nom, indi) => {
+				const store = getStore();
+				const actions = getActions();
+				let nombrEx = false
+
+				store.favorito.map((item, index) => {
+
+					if (nom === item) {
+
+						actions.BorrarFavoritos(indi)
+						nombrEx = true
+
+					}
+				})
+
+				if (nombrEx === false) {
+					console.log(nombrEx)
+					setStore({ ...store, favorito: [...store.favorito, nom] })
+				}
 
 			}
 

@@ -49,9 +49,12 @@ export const Demo = () => {
 			<h2 className="text-danger">Vehicles</h2>
 			<div className="d-flex mb-5" style={{ overflowX: 'scroll', scrollSnapType: 'x mandatory' }}>
 				{store.autos.map((item, index) => {
+
 					return (
 						<div key={index}>
+
 							<HomeCardCar index={index} name={item.name} manufacturer={item.manufacturer} model={item.model}></HomeCardCar>
+
 						</div>
 					)
 				})}
