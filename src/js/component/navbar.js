@@ -28,7 +28,7 @@ export const Navbar = () => {
 						data-bs-toggle="dropdown"
 						aria-expanded="false">
 						Favoritos
-						<span className="badge bg-secondary">4</span>
+						<span className="badge bg-secondary mx-2">{store.favorito.length}</span>
 					</button>
 					<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 						{store.favorito.map((item, index) => {
