@@ -8,12 +8,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			detalledePlaneta: {},
 			autos: [],
 			detallesAuto: {},
+			favorito: [],
 
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
+
 			},
 			loadSomeData: () => {
 				/**
@@ -33,6 +35,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+
 			},
 
 
@@ -127,12 +130,56 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					setStore({ detallesAuto: data });
 
+
 				} catch (error) {
 					console.log(error);
 
 				}
 			},
 
+			cargarFavorito: (nom) => {
+				const store = getStore();
+
+				let nombrEx = false
+
+
+				store.favorito.map((item, index) => {
+
+					if (nom === item) {
+						return nombrEx = true
+
+					}
+
+				})
+
+				if (nombrEx === false) {
+					console.log(nombrEx)
+					setStore({ ...store, favorito: [...store.favorito, nom] })
+				}
+
+			},
+
+
+			BorrarFavoritos: (id) => {
+
+				const store = getStore();
+				const result = store.favorito.filter((x, newIndex) => {
+
+					return id != newIndex
+				})
+
+				setStore({
+					...store, favorito: store.favorito.filter((x, newIndex) => {
+
+						return id != newIndex
+					})
+
+
+
+				})
+
+
+			}
 
 		}
 	};

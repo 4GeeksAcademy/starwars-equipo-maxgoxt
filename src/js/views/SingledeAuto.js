@@ -9,31 +9,32 @@ export const SingleAuto = () => {
     const params = useParams();
 
     console.log(store.detallesAuto);
-    console.log("hola");
-
+    console.log("hola-q");
 
     useEffect(() => {
-        actions.obtenerAutoSingle(params.theid + 1)
+        actions.obtenerAutoSingle(params.theid)
     }, [])
+
+
     return (
-        <div className="jumbotron">
+        <div className="jumbotron container">
             <div className="jumbotron d-flex align-items-center">
                 <div className="jumbotron-content">
                     <div className="container">
-                        <div className="row">
-                            <div className="col-md-6">
-                                <img src="https://media.gq.com.mx/photos/5dfbaf25d811050008602c46/16:9/w_1280,c_limit/star%20wars.jpg" />
+                        <div className="row mb-5">
+                            <div className="col-6 row" >
+                                <img className="" src="https://i1.wp.com/www.astropt.org/blog/wp-content/uploads/2015/05/xw1.jpg" />
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-6" style={{ height: "30px" }}>
                                 <h1>{store.detallesAuto.name} </h1>
-                                <p>ihdskadiasndlkasmdñlasda</p>
+                                <p>It is a lonnog established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
                             </div>
                         </div>
                     </div>
 
                     <div className="container-flex">
                         <div className="row">
-                            <div className="col-md-2">
+                            <div className="col-2">
                                 <div className="card">
                                     <div className="card-body">
                                         <h5 className="card-title">Name</h5>
@@ -43,7 +44,7 @@ export const SingleAuto = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-2">
+                            <div className="col-2">
                                 <div className="card">
                                     <div className="card-body">
                                         <h5 className="card-title">model</h5>
@@ -53,7 +54,7 @@ export const SingleAuto = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-2">
+                            <div className="col-2">
                                 <div className="card">
                                     <div className="card-body">
                                         <h5 className="card-title">max_atmosphering_speed</h5>
@@ -63,7 +64,7 @@ export const SingleAuto = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-2">
+                            <div className="col-2">
                                 <div className="card">
                                     <div className="card-body">
                                         <h5 className="card-title">passengers</h5>
@@ -73,17 +74,17 @@ export const SingleAuto = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-2">
+                            <div className="col-2">
                                 <div className="card">
                                     <div className="card-body">
                                         <h5 className="card-title">cargo_capacity</h5>
                                         <p className="card-text">
-                                            {store.detallesAuto.cargo_capacity}
+                                            {store.detallesAuto.passengers}
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-2">
+                            <div className="col-2">
                                 <div className="card">
                                     <div className="card-body">
                                         <h5 className="card-title">vehicle_class</h5>
@@ -96,15 +97,19 @@ export const SingleAuto = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
-            {/* <Personajes/> */}
+
             <Link to="/">
-                <span className="btn btn-primary btn-lg" href="#" role="button">
+                <span className="btn btn-primary btn-lg m-2" href="#" role="button">
                     Back home
                 </span>
             </Link>
-
         </div>
+
     );
 };
+
+
+
+
+

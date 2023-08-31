@@ -28,8 +28,8 @@ export const HomeCardPers = props => {
                         {/*AGREGAR NUMERO EN EL ID DEL <input/> PARA QUE FUNCIONE BIEN*/}
                         <input type="checkbox" className="btn-check" id={"btn-check-outlined " + props.index} autoComplete="off" />
                         <label className="btn btn-outline-warning" htmlFor="btn-check-outlined" 
-                        onClick={() => { i.className !== 'far fa-heart' ? setFav("fas fa-heart") : setFav("far fa-heart")}}>
-                            <i className={fav} ref={i}></i>
+                        onClick={() => { i.className !== 'far fa-heart' ? setFav("fas fa-heart") : setFav("far fa-heart"), actions.cargarFavorito(props.name)}}>
+                        <i className={fav} ref={i} ></i>
                         </label>
                     </div>
                 </div>
