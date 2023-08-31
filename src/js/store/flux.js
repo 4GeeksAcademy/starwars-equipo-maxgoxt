@@ -128,8 +128,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let response = await fetch("https://swapi.dev/api/vehicles/" + num);
 					let data = await response.json();
 
+					if (response.status === 404) {
+						alert("la informacion detallada de este vehiculo no esta disponible")	
+					}				
 					setStore({ detallesAuto: data });
-
 
 				} catch (error) {
 					console.log(error);
