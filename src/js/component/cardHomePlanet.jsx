@@ -22,6 +22,7 @@ export const HomeCardPlanet = props => {
         actions.cargarFavorito(props.name, props.index);
     };
 
+    
 
     return (
         <div>
