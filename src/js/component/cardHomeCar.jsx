@@ -5,10 +5,22 @@ import PropTypes from "prop-types";
 import imagen from "../../img/how-to.png";
 
 export const HomeCardCar = props => {
-    const [fav, setFav] = useState("far fa-heart")
-    const i = useRef(i)
+    const [fav3, setFav3] = useState("far fa-heart");
+    const refs3 = useRef([]);
 
     const { store, actions } = useContext(Context);
+
+    useEffect(() => {
+        refs3.current = refs3.current.slice(0, props.length); // Maintain the same number of refs as items
+    }, [props.length]);
+
+    const toggleFavorite3 = index => {
+        const newFav = [...refs3.current];
+        newFav[index].className = newFav[index].className !== "far fa-heart" ? "far fa-heart" : "fas fa-heart";
+        refs3.current = newFav;
+
+        actions.cargarFavorito(props.name, props.index);
+    };
 
     return (
         <div>
@@ -22,20 +34,26 @@ export const HomeCardCar = props => {
                         <label>Manufacturer:</label><span> {props.manufacturer}</span>
                     </div>
                     <div className="d-flex justify-content-between">
-                        <Link to={"/singleauto/" + (props.index+1)}>
+                        <Link to={"/singleauto/" + (props.index + 1)}>
                             <button type="button" className="btn btn-outline-primary">Learn more!</button>
                         </Link>
-                        {/*AGREGAR NUMERO EN EL ID DEL <input/> PARA QUE FUNCIONE BIEN*/}
-                        <input type="checkbox" className="btn-check" id={"btn-check-outlined " + props.index} autoComplete="off" />
-                        <label className="btn btn-outline-warning" htmlFor="btn-check-outlined" 
-                        onClick={() => { i.className !== 'far fa-heart' ? setFav("fas fa-heart") : setFav("far fa-heart"), actions.cargarFavorito(props.name)}}>
-                            <i className={fav} ref={i}></i>
+                        <input
+                            type="checkbox"
+                            className="btn-check"
+                            id={"btn-check-outlined" + props.index}
+                            autoComplete="off"
+                        />
+                        <label
+                            className="btn btn-outline-warning"
+                            htmlFor={"btn-check-outlined" + props.index + 1}
+                            onClick={() => toggleFavorite3(props.index)}>
+                            <i className={fav3} ref={el3 => (refs3.current[props.index] = el3)}></i>
                         </label>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
 HomeCardCar.propTypes = {
@@ -47,4 +65,24 @@ HomeCardCar.propTypes = {
 
 HomeCardCar.defaultProps = {
     changeColor: null,
-}
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
