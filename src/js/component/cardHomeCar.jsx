@@ -57,6 +57,7 @@ export const HomeCardCar = props => {
 };
 
 HomeCardCar.propTypes = {
+    
     index: PropTypes.number,
     name: PropTypes.string,
     model: PropTypes.string,

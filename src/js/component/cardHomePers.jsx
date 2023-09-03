@@ -35,7 +35,7 @@ export const HomeCardPers = props => {
                         <label>Eye-Color:</label><span> {props.eyeColor}</span>
                     </div>
                     <div className="d-flex justify-content-between">
-                        <Link to={"/singlepersonaje/" + (props.index+1)}>
+                        <Link to={"/singlepersonaje/" + (props.index + 1)}>
                             <button type="button" className="btn btn-outline-primary">Learn more!</button>
                         </Link>
                         {/*AGREGAR NUMERO EN EL ID DEL <input/> PARA QUE FUNCIONE BIEN*/}
@@ -47,7 +47,7 @@ export const HomeCardPers = props => {
                         />
                         <label
                             className="btn btn-outline-warning"
-                            htmlFor={"btn-check-outlined" + props.index}
+                            htmlFor={"btn-check-outlined" + props.index + 1}
                             onClick={() => toggleFavorite1(props.index)}>
                             <i className={fav1} ref={el1 => (refs1.current[props.index] = el1)}></i>
                         </label>

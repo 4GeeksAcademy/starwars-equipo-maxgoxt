@@ -22,6 +22,7 @@ export const Demo = () => {
 		/* 	actions.actualizar() */
 	}, [store.favorito])
 
+
 	return (
 		<div className="container">
 			<h2 className="text-danger">Characters</h2>
@@ -40,7 +41,7 @@ export const Demo = () => {
 				{store.planetas.map((item, index) => {
 					return (
 						<div key={index}>
-							<HomeCardPlanet index={index} name={item.name} population={item.population} terrain={item.terrain}></HomeCardPlanet>
+							<HomeCardPlanet index={index} id={item.id} name={item.name} population={item.population} terrain={item.terrain}></HomeCardPlanet>
 						</div>
 					)
 				})}

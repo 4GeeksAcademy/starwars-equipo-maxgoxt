@@ -9,6 +9,7 @@ export const HomeCardPlanet = props => {
     const refs2 = useRef([]);
 
     const { store, actions } = useContext(Context);
+    
 
     useEffect(() => {
         refs2.current = refs2.current.slice(0, props.length); // Maintain the same number of refs as items
@@ -18,11 +19,11 @@ export const HomeCardPlanet = props => {
         const newFav = [...refs2.current];
         newFav[index].className = newFav[index].className !== "far fa-heart" ? "far fa-heart" : "fas fa-heart";
         refs2.current = newFav;
-
         actions.cargarFavorito(props.name, props.index);
+        console.log(props.name)
     };
 
-    
+  
 
     return (
         <div>
@@ -44,15 +45,20 @@ export const HomeCardPlanet = props => {
                         <input
                             type="checkbox"
                             className="btn-check"
-                            id={"btn-check-outlined" + props.index}
+                            id={"btn-check-outlined" + props.index }
                             autoComplete="off"
+                            
                         />
                         <label
                             className="btn btn-outline-warning"
                             htmlFor={"btn-check-outlined" + props.index + 1}
+                            id = {props.index}
                             onClick={() => toggleFavorite2(props.index)}>
+                           
                             <i className={fav2} ref={el2 => (refs2.current[props.index] = el2)}></i>
+                            
                         </label>
+                        
                     </div>
                 </div>
             </div>
@@ -61,6 +67,7 @@ export const HomeCardPlanet = props => {
 };
 
 HomeCardPlanet.propTypes = {
+    id: PropTypes.number,
     index: PropTypes.number,
     name: PropTypes.string,
     terrain: PropTypes.string,
