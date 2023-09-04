@@ -15,7 +15,7 @@ export const Navbar = () => {
 			<nav className="navbar navbar-light mb-3">
 				<a href="/">
 					<img
-						src="https://lumiere-a.akamaihd.net/v1/images/sw_logo_stacked_2x-52b4f6d33087_7ef430af.png?region=0,0,586,254"
+						src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2560px-Star_Wars_Logo.svg.png"
 						alt="logoStarWars"
 						style={{ width: '100px', height: 'auto' }}
 					/>

@@ -10,7 +10,7 @@ export const HomeCardCar = props => {
 
     const { store, actions } = useContext(Context);
 
-    useEffect(() => {
+    useEffect(() => {                       
         refs3.current = refs3.current.slice(0, props.length); // Maintain the same number of refs as items
     }, [props.length]);
 
