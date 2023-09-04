@@ -63,6 +63,8 @@ export const HomeCardPlanet = props => {
                 </div>
             </div>
         </div>
+
+        
     )
 };
 
