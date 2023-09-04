@@ -12,9 +12,6 @@ export const SinglePersonajes = props => {
 		<div className="jumbotron">
 <br/>
 <Personajes/>
-
-			
-
 		</div>
 	);
 };

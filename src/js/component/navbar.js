@@ -11,8 +11,8 @@ export const Navbar = () => {
 	 */
 
 	return (
-		<div className="container bg-light">
-			<nav className="navbar navbar-light mb-3">
+		<div className=" bg-dark bg-opacity-75">
+			<nav className="navbar navbar-light mb-3" style={{padding:"0px 180px 0px 180px"}}>
 				<a href="/">
 					<img
 						src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2560px-Star_Wars_Logo.svg.png"
