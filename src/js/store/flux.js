@@ -140,18 +140,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 
-			BorrarFavoritos: (id) => {
+			BorrarFavoritos: (nom) => {
 
 				const store = getStore();
-				const result = store.favorito.filter((x, newIndex) => {
-
-					return id != newIndex
-				})
 
 				setStore({
-					...store, favorito: store.favorito.filter((x, newIndex) => {
+					...store, favorito: store.favorito.filter((item, newIndex) => {
 
-						return id != newIndex
+						return nom != item
 					})
 
 
@@ -160,6 +156,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 			},
+
 
 			cargarFavorito: (nom, indi) => {
 				const store = getStore();
@@ -170,7 +167,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					if (nom === item) {
 
-						actions.BorrarFavoritos(indi)
+						actions.BorrarFavoritos(nom)
 						nombrEx = true
 
 					}
