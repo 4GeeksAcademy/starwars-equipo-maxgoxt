@@ -55,7 +55,7 @@ export const HomeCardPlanet = props => {
                             id = {props.index}
                             onClick={() => toggleFavorite2(props.index)}>
                            
-                            <i className={fav2} ref={el2 => (refs2.current[props.index] = el2)}></i>
+                            <i className={fav2} ref={el2 => (refs2.current[props.index] = el2)} id={props.name}></i>
                             
                         </label>
                         

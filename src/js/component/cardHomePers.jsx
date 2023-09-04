@@ -49,7 +49,7 @@ export const HomeCardPers = props => {
                             className="btn btn-outline-warning"
                             htmlFor={"btn-check-outlined" + props.index + 1}
                             onClick={() => toggleFavorite1(props.index)}>
-                            <i className={fav1} ref={el1 => (refs1.current[props.index] = el1)}></i>
+                            <i className={fav1} ref={el1 => (refs1.current[props.index] = el1)} id={props.name}></i>
                         </label>
                     </div>
                 </div>
