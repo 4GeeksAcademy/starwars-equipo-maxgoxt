@@ -12,6 +12,9 @@ import { Footer } from "./component/footer";
 import { SinglePersonajes } from "./views/singleDePersonajes.jsx"
 import { SinglePlaneta } from "./views/singledePlaneta";
 import { SingleAuto } from "./views/SingledeAuto"
+import { Login } from "./views/login.jsx"
+/* import { singup } from "./views/singup" */
+
 
 //create your first component
 const Layout = () => {
@@ -31,6 +34,8 @@ const Layout = () => {
 						<Route path="/singlepersonaje/:theid" element={<SinglePersonajes />} />
 						<Route path="/singlePlaneta/:theid" element={<SinglePlaneta />} />
 						<Route path="/singleauto/:theid" element={<SingleAuto />} />
+						<Route path="/singleauto/:theid" element={<SingleAuto />} />
+						<Route path="/login" element={<Login />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />
