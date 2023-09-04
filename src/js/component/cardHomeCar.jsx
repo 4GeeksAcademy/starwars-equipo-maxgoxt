@@ -47,7 +47,7 @@ export const HomeCardCar = props => {
                             className="btn btn-outline-warning"
                             htmlFor={"btn-check-outlined" + props.index + 1}
                             onClick={() => toggleFavorite3(props.index)}>
-                            <i className={fav3} ref={el3 => (refs3.current[props.index] = el3)}></i>
+                            <i className={fav3} ref={el3 => (refs3.current[props.index] = el3)} id={props.name}></i>
                         </label>
                     </div>
                 </div>
@@ -57,6 +57,7 @@ export const HomeCardCar = props => {
 };
 
 HomeCardCar.propTypes = {
+    
     index: PropTypes.number,
     name: PropTypes.string,
     model: PropTypes.string,
