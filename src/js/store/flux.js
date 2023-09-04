@@ -178,6 +178,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ ...store, favorito: [...store.favorito, nom] })
 				}
 
+			},
+
+			CambiarColor: (nom) => {
+
+				document.getElementById(nom).className = "far fa-heart"
+
 			}
 
 		}
